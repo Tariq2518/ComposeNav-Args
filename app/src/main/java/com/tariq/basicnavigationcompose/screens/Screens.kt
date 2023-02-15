@@ -7,4 +7,5 @@ sealed class Screens(val route: String) {
             return this.route.replace("{id}", id.toString())
         }
     }
+
 }
