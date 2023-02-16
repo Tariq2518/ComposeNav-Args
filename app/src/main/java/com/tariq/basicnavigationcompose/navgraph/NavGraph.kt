@@ -6,9 +6,8 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import com.tariq.basicnavigationcompose.screens.HomeScreen
-import com.tariq.basicnavigationcompose.screens.Screens
-import com.tariq.basicnavigationcompose.screens.SecondScreen
+import androidx.navigation.navigation
+import com.tariq.basicnavigationcompose.screens.*
 
 @Composable
 fun SetUpNavGraph(
@@ -16,21 +15,15 @@ fun SetUpNavGraph(
 ) {
     NavHost(
         navController = navController,
-        startDestination = Screens.HomeScreen.route
+        startDestination = MAIN_ROUTE,
+        route = ROOT_ROUTE
     ) {
-        composable(
-            route = Screens.HomeScreen.route
-        ) {
-            HomeScreen(navController = navController)
-        }
-        composable(
-            route = Screens.SecondScreen.route,
-            arguments = listOf(navArgument("id") {
-                type = NavType.IntType
-            })
-        ) {
-            SecondScreen(navController)
-        }
+
+        mainNavGraph(navController = navController)
+
+        authNavGraph(navController = navController)
+
+
     }
 
 }

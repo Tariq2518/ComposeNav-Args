@@ -33,15 +33,15 @@ fun HomeScreen(
             )
             Button(
                 onClick = {
-                    navController.navigate(route = Screens.SecondScreen.passId(10))
+                    navController.navigate(AUTH_ROUTE)
                 },
                 modifier = Modifier
-                    .height(56.dp)
+                    .height(46.dp)
                     .fillMaxWidth()
                     .padding(24.dp, 0.dp),
             ) {
                 Text(
-                    text = "Next Screen",
+                    text = "Login/SignUp",
                     fontWeight = FontWeight.Bold,
                     fontSize = MaterialTheme.typography.h6.fontSize
                 )
@@ -50,7 +50,6 @@ fun HomeScreen(
     }
 }
 
-/*
 @Composable
 @Preview(showSystemUi = true, showBackground = true)
 fun HomeScreenPreview() {
@@ -58,5 +57,4 @@ fun HomeScreenPreview() {
         navController = rememberNavController()
     )
 }
-*/
 
